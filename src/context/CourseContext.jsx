@@ -1,8 +1,3 @@
-// ------------------------------------------------------------------
-// Global app state via Context API + useState (as requested).
-// Holds: courses, loading/error states, filters, sorting, pagination.
-// ------------------------------------------------------------------
-
 import { createContext, useContext, useEffect, useMemo, useState } from "react";
 import mockCourses from "@/data/courses.js";
 
