@@ -1,0 +1,99 @@
+@import "tailwindcss" source(none);
+@source "../src";
+
+@custom-variant dark (&:is(.dark *));
+
+/* ------------------------------------------------------------------ */
+/* Design system - Edutech Course Directory                            */
+/* Warm, modern, trustworthy palette: deep indigo + warm amber accent  */
+/* ------------------------------------------------------------------ */
+
+@theme inline {
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --radius-2xl: calc(var(--radius) + 8px);
+
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+
+  /* custom tokens */
+  --color-hero-from: var(--hero-from);
+  --color-hero-via: var(--hero-via);
+  --color-hero-to: var(--hero-to);
+
+  --animate-float: float 6s ease-in-out infinite;
+  --animate-fade-up: fade-up 0.6s ease-out both;
+  --animate-pop: pop 0.4s ease-out both;
+}
+
+:root {
+  --radius: 0.875rem;
+
+  /* surfaces */
+  --background: oklch(0.985 0.005 95);
+  --foreground: oklch(0.20 0.04 270);
+
+  --card: oklch(1 0 0);
+  --card-foreground: oklch(0.20 0.04 270);
+
+  /* indigo primary */
+  --primary: oklch(0.42 0.17 275);
+  --primary-foreground: oklch(0.98 0.01 95);
+
+  /* amber accent */
+  --accent: oklch(0.82 0.16 75);
+  --accent-foreground: oklch(0.25 0.05 275);
+
+  --secondary: oklch(0.95 0.02 270);
+  --secondary-foreground: oklch(0.25 0.05 275);
+
+  --muted: oklch(0.95 0.01 95);
+  --muted-foreground: oklch(0.50 0.03 270);
+
+  --border: oklch(0.90 0.015 270);
+  --input: oklch(0.92 0.012 270);
+  --ring: oklch(0.55 0.18 275);
+
+  /* hero gradient stops */
+  --hero-from: oklch(0.32 0.15 275);
+  --hero-via:  oklch(0.45 0.18 290);
+  --hero-to:   oklch(0.60 0.16 320);
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50%      { transform: translateY(-14px); }
+}
+@keyframes fade-up {
+  from { opacity: 0; transform: translateY(16px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+@keyframes pop {
+  from { opacity: 0; transform: scale(0.96); }
+  to   { opacity: 1; transform: scale(1); }
+}
+
+@layer base {
+  * { border-color: var(--color-border); }
+  html { scroll-behavior: smooth; }
+  body {
+    background-color: var(--color-background);
+    color: var(--color-foreground);
+    font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  }
+}
