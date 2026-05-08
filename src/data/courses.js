@@ -1,9 +1,3 @@
-// ------------------------------------------------------------------
-// Mock "API" data for the course directory.
-// In a real project this would come from a REST endpoint, but the
-// assignment lets us mock it - so a plain JS array does the job.
-// ------------------------------------------------------------------
-
 const courses = [
   { id: 1,  name: "React for Beginners",          instructor: "Aarav Sharma",   duration: "8 weeks",  category: "Web Development", rating: 4.7, price: 10500 },
   { id: 2,  name: "Advanced Node.js",             instructor: "Priya Mehta",    duration: "10 weeks", category: "Backend",         rating: 4.8, price: 13500 },
