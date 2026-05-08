@@ -1,24 +1,12 @@
-// ------------------------------------------------------------------
-// Simple numeric pagination. Reads/writes the current page from
-// CourseContext. Keeps it short - we're not paginating millions of rows.
-// ------------------------------------------------------------------
-
 import { useCourses } from "@/context/CourseContext.jsx";
 
 export default function Pagination() {
   const { page, setPage, totalPages } = useCourses();
-
-  // nothing to do if we only have one page
   if (totalPages <= 1) return null;
-
-  // build the array of page numbers [1..totalPages]
   const pages = Array.from({ length: totalPages }, (_, i) => i + 1);
-
-  // helpers to move pages, clamped to valid range
   const prev = () => setPage(Math.max(1, page - 1));
   const next = () => setPage(Math.min(totalPages, page + 1));
 
-  // shared button styles
   const btn =
     "min-w-[40px] rounded-lg border border-border bg-card px-3 py-2 text-sm " +
     "transition-all duration-200 hover:border-primary hover:text-primary " +
